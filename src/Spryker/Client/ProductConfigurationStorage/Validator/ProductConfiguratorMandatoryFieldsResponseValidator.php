@@ -9,7 +9,6 @@ namespace Spryker\Client\ProductConfigurationStorage\Validator;
 
 use Generated\Shared\Transfer\MessageTransfer;
 use Generated\Shared\Transfer\ProductConfiguratorResponseProcessorResponseTransfer;
-use Generated\Shared\Transfer\ProductConfiguratorResponseTransfer;
 use Spryker\Shared\Kernel\Transfer\Exception\RequiredTransferPropertyException;
 
 class ProductConfiguratorMandatoryFieldsResponseValidator implements ProductConfiguratorResponseValidatorInterface
@@ -30,7 +29,7 @@ class ProductConfiguratorMandatoryFieldsResponseValidator implements ProductConf
             ->getProductConfiguratorResponse();
 
         try {
-            $this->assertMandatoryFields($productConfiguratorResponseTransfer);
+            $productConfiguratorResponseTransfer->requireSku();
         } catch (RequiredTransferPropertyException $requiredTransferPropertyException) {
             return $productConfiguratorResponseProcessorResponseTransfer
                 ->addMessage(
@@ -40,22 +39,5 @@ class ProductConfiguratorMandatoryFieldsResponseValidator implements ProductConf
         }
 
         return $productConfiguratorResponseProcessorResponseTransfer;
-    }
-
-    /**
-     * @param \Generated\Shared\Transfer\ProductConfiguratorResponseTransfer $productConfiguratorResponseTransfer
-     *
-     * @return void
-     */
-    protected function assertMandatoryFields(ProductConfiguratorResponseTransfer $productConfiguratorResponseTransfer): void
-    {
-        $productConfiguratorResponseTransfer
-            ->requireSku()
-            ->requireSourceType()
-            ->requireCheckSum()
-            ->requireTimestamp()
-            ->requireProductConfigurationInstance()
-            ->getProductConfigurationInstance()
-            ->requireConfiguratorKey();
     }
 }
