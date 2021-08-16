@@ -16,7 +16,7 @@ use Spryker\Client\PriceProductStorageExtension\Dependency\Plugin\PriceProductFi
  * @method \Spryker\Client\ProductConfigurationStorage\ProductConfigurationStorageClientInterface getClient()
  * @method \Spryker\Client\ProductConfigurationStorage\ProductConfigurationStorageFactory getFactory()
  */
-class ProductConfigurationPriceFilterExpanderPlugin extends AbstractPlugin implements PriceProductFilterExpanderPluginInterface
+class ProductConfigurationPriceProductFilterExpanderPlugin extends AbstractPlugin implements PriceProductFilterExpanderPluginInterface
 {
     /**
      * {@inheritDoc}
