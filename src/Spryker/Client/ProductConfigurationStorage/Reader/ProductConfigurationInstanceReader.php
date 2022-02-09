@@ -61,7 +61,6 @@ class ProductConfigurationInstanceReader implements ProductConfigurationInstance
     public function findProductConfigurationInstanceBySku(string $sku): ?ProductConfigurationInstanceTransfer
     {
         $productConfigurationSessionKey = $this->productConfigurationSessionKeyBuilder->getProductConfigurationSessionKey($sku);
-        /** @var \Generated\Shared\Transfer\ProductConfigurationInstanceTransfer|null $productConfigurationInstanceTransfer */
         $productConfigurationInstanceTransfer = $this->sessionClient->get($productConfigurationSessionKey);
 
         if ($productConfigurationInstanceTransfer) {

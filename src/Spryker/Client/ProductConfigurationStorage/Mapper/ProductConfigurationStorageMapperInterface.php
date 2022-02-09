@@ -13,13 +13,13 @@ interface ProductConfigurationStorageMapperInterface
 {
     /**
      * @param array $productConfigurationStorageData
-     * @param \Generated\Shared\Transfer\ProductConfigurationStorageTransfer $productConfigurationStorageTransfer
+     * @param \Generated\Shared\Transfer\ProductConfigurationStorageTransfer $configurationStorageTransfer
      *
      * @return \Generated\Shared\Transfer\ProductConfigurationStorageTransfer
      */
     public function mapProductConfigurationStorageDataToProductConfigurationStorageTransfer(
         array $productConfigurationStorageData,
-        ProductConfigurationStorageTransfer $productConfigurationStorageTransfer
+        ProductConfigurationStorageTransfer $configurationStorageTransfer
     ): ProductConfigurationStorageTransfer;
 
     /**
