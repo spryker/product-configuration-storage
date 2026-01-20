@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace SprykerTest\Zed\ProductConfiguration\Business;
+namespace SprykerTest\Zed\ProductConfigurationStorage\Business;
 
 use Codeception\Test\Unit;
 use Generated\Shared\Transfer\EventEntityTransfer;
@@ -23,7 +23,7 @@ use Spryker\Zed\ProductConfigurationStorage\Persistence\ProductConfigurationStor
  *
  * @group SprykerTest
  * @group Zed
- * @group ProductConfiguration
+ * @group ProductConfigurationStorage
  * @group Business
  * @group Facade
  * @group ProductConfigurationStorageFacadeTest
@@ -66,6 +66,7 @@ class ProductConfigurationStorageFacadeTest extends Unit
         $this->tester->setDependency(QueueDependencyProvider::QUEUE_ADAPTERS, function (Container $container) {
             return [
                 $container->getLocator()->rabbitMq()->client()->createQueueAdapter(),
+                $container->getLocator()->symfonyMessenger()->client()->createQueueAdapter(),
             ];
         });
 
