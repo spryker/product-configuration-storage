@@ -25,7 +25,7 @@ class ProductConfigurationStorageToEventBehaviorFacadeBridge implements ProductC
     /**
      * @param array<\Generated\Shared\Transfer\EventEntityTransfer> $eventTransfers
      *
-     * @return list<int>
+     * @return array<int>
      */
     public function getEventTransferIds(array $eventTransfers): array
     {
