@@ -11,11 +11,6 @@ use Generated\Shared\Transfer\ProductConfigurationStorageTransfer;
 
 interface ProductConfigurationStorageEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ProductConfigurationStorageTransfer $productConfigurationStorageTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductConfigurationStorageTransfer
-     */
     public function saveProductConfigurationStorage(
         ProductConfigurationStorageTransfer $productConfigurationStorageTransfer
     ): ProductConfigurationStorageTransfer;

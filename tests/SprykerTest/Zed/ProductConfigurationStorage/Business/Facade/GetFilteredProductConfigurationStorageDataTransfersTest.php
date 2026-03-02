@@ -47,9 +47,6 @@ class GetFilteredProductConfigurationStorageDataTransfersTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -64,9 +61,6 @@ class GetFilteredProductConfigurationStorageDataTransfersTest extends Unit
         $this->tester->truncateProductConfigurationStorageEntities();
     }
 
-    /**
-     * @return void
-     */
     public function testGetFilteredProductConfigurationStorageDataTransfersWillReturnSynchronizationDataTransfers(): void
     {
         // Arrange
@@ -99,9 +93,6 @@ class GetFilteredProductConfigurationStorageDataTransfersTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testGetFilteredProductConfigurationStorageDataTransfersWillReturnSynchronizationDataTransfersWithFakeId(): void
     {
         // Arrange
@@ -125,9 +116,6 @@ class GetFilteredProductConfigurationStorageDataTransfersTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testGetFilteredProductConfigurationStorageDataTransfersWillReturnSynchronizationDataTransfersWithoutIds(): void
     {
         // Arrange
@@ -157,9 +145,6 @@ class GetFilteredProductConfigurationStorageDataTransfersTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testGetFilteredProductConfigurationStorageDataTransfersWillReturnSynchronizationDataTransfersWithLimit(): void
     {
         // Arrange
@@ -197,9 +182,6 @@ class GetFilteredProductConfigurationStorageDataTransfersTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testGetFilteredProductConfigurationStorageDataTransfersWillReturnSynchronizationDataTransfersChecksZeroOffset(): void
     {
         // Arrange
@@ -242,9 +224,6 @@ class GetFilteredProductConfigurationStorageDataTransfersTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testGetFilteredProductConfigurationStorageDataTransfersWillReturnSynchronizationDataTransfersChecksFirstOffset(): void
     {
         // Arrange

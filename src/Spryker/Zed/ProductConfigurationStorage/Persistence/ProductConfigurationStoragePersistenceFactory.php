@@ -18,17 +18,11 @@ use Spryker\Zed\ProductConfigurationStorage\Persistence\Propel\Mapper\ProductCon
  */
 class ProductConfigurationStoragePersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\ProductConfigurationStorage\Persistence\SpyProductConfigurationStorageQuery
-     */
     public function createProductConfigurationStorageQuery(): SpyProductConfigurationStorageQuery
     {
         return SpyProductConfigurationStorageQuery::create();
     }
 
-    /**
-     * @return \Spryker\Zed\ProductConfigurationStorage\Persistence\Propel\Mapper\ProductConfigurationStorageMapper
-     */
     public function createProductConfigurationStorageMapper(): ProductConfigurationStorageMapper
     {
         return new ProductConfigurationStorageMapper();

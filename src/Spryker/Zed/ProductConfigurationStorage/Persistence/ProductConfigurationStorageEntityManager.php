@@ -19,11 +19,6 @@ class ProductConfigurationStorageEntityManager extends AbstractEntityManager imp
 {
     use TransactionTrait;
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductConfigurationStorageTransfer $productConfigurationStorageTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductConfigurationStorageTransfer
-     */
     public function saveProductConfigurationStorage(
         ProductConfigurationStorageTransfer $productConfigurationStorageTransfer
     ): ProductConfigurationStorageTransfer {

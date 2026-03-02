@@ -88,17 +88,11 @@ class ProductConfigurationStorageClientTester extends Actor
         return $productConfigurationStorageClient;
     }
 
-    /**
-     * @return \Spryker\Client\ProductConfigurationStorage\ProductConfigurationStorageClientInterface
-     */
     public function getClient(): ProductConfigurationStorageClientInterface
     {
         return $this->getLocator()->productConfigurationStorage()->client();
     }
 
-    /**
-     * @return void
-     */
     public function setupStorageRedisConfig(): void
     {
         $this->setConfig(StorageConstants::STORAGE_REDIS_PROTOCOL, Config::get(static::REDIS_SCHEME, false));

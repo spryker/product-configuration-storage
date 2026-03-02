@@ -22,20 +22,12 @@ class ProductConfigurationAvailabilityReader implements ProductConfigurationAvai
      */
     protected $productConfigurationInstanceReader;
 
-    /**
-     * @param \Spryker\Client\ProductConfigurationStorage\Reader\ProductConfigurationInstanceReaderInterface $productConfigurationInstanceReader
-     */
     public function __construct(
         ProductConfigurationInstanceReaderInterface $productConfigurationInstanceReader
     ) {
         $this->productConfigurationInstanceReader = $productConfigurationInstanceReader;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     *
-     * @return bool
-     */
     public function isProductHasProductConfigurationInstance(ProductViewTransfer $productViewTransfer): bool
     {
         $productConfigurationInstance = $this->findProductConfigurationInstance($productViewTransfer);
@@ -43,11 +35,6 @@ class ProductConfigurationAvailabilityReader implements ProductConfigurationAvai
         return $productConfigurationInstance !== null;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     *
-     * @return bool
-     */
     public function isProductConcreteAvailable(ProductViewTransfer $productViewTransfer): bool
     {
         $productConfigurationInstance = $this->findProductConfigurationInstance($productViewTransfer);
@@ -59,11 +46,6 @@ class ProductConfigurationAvailabilityReader implements ProductConfigurationAvai
         return $productConfigurationInstance->getAvailableQuantity() > static::MINIMUM_AVAILABLE_QUANTITY;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductConfigurationInstanceTransfer|null
-     */
     protected function findProductConfigurationInstance(
         ProductViewTransfer $productViewTransfer
     ): ?ProductConfigurationInstanceTransfer {
@@ -80,11 +62,6 @@ class ProductConfigurationAvailabilityReader implements ProductConfigurationAvai
             ->findProductConfigurationInstanceBySku($productViewTransfer->getSkuOrFail());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     *
-     * @return bool
-     */
     protected function isProductConcrete(ProductViewTransfer $productViewTransfer): bool
     {
         return $productViewTransfer->getIdProductConcrete() !== null;

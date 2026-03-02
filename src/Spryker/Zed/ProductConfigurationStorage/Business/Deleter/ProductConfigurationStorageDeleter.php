@@ -22,10 +22,6 @@ class ProductConfigurationStorageDeleter implements ProductConfigurationStorageD
      */
     protected $productConfigurationStorageEntityManager;
 
-    /**
-     * @param \Spryker\Zed\ProductConfigurationStorage\Dependency\Facade\ProductConfigurationStorageToEventBehaviorFacadeInterface $eventBehaviorFacade
-     * @param \Spryker\Zed\ProductConfigurationStorage\Persistence\ProductConfigurationStorageEntityManagerInterface $productConfigurationStorageEntityManager
-     */
     public function __construct(
         ProductConfigurationStorageToEventBehaviorFacadeInterface $eventBehaviorFacade,
         ProductConfigurationStorageEntityManagerInterface $productConfigurationStorageEntityManager

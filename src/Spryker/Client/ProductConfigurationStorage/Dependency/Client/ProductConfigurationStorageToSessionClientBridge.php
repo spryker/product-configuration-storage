@@ -44,9 +44,6 @@ class ProductConfigurationStorageToSessionClientBridge implements ProductConfigu
         return $this->sessionClient->get($name, $default);
     }
 
-    /**
-     * @return array
-     */
     public function all(): array
     {
         return $this->sessionClient->all();

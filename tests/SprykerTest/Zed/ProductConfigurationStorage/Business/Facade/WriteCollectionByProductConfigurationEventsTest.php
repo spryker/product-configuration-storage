@@ -36,9 +36,6 @@ class WriteCollectionByProductConfigurationEventsTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -53,9 +50,6 @@ class WriteCollectionByProductConfigurationEventsTest extends Unit
         $this->tester->truncateProductConfigurationStorageEntities();
     }
 
-    /**
-     * @return void
-     */
     public function testWriteCollectionByProductConfigurationEventsShouldSaveProductConfigurationStorage(): void
     {
         // Arrange
@@ -79,9 +73,6 @@ class WriteCollectionByProductConfigurationEventsTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testWriteCollectionByProductConfigurationEventsShouldSaveProductConfigurationStorageForMultipleEvents(): void
     {
         // Arrange
@@ -112,9 +103,6 @@ class WriteCollectionByProductConfigurationEventsTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testWriteCollectionByProductConfigurationEventsShouldSaveProductConfigurationStorageWithoutIds(): void
     {
         // Arrange
@@ -135,9 +123,6 @@ class WriteCollectionByProductConfigurationEventsTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testWriteCollectionByProductConfigurationEventsShouldSaveProductConfigurationStorageWithFakeIds(): void
     {
         // Arrange

@@ -11,12 +11,6 @@ use Generated\Shared\Transfer\ProductConfigurationInstanceTransfer;
 
 interface ProductConfigurationInstanceWriterInterface
 {
-    /**
-     * @param string $sku
-     * @param \Generated\Shared\Transfer\ProductConfigurationInstanceTransfer $productConfigurationInstanceTransfer
-     *
-     * @return void
-     */
     public function storeProductConfigurationInstanceBySku(
         string $sku,
         ProductConfigurationInstanceTransfer $productConfigurationInstanceTransfer

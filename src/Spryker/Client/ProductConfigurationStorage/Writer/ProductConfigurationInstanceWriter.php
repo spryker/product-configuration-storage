@@ -23,10 +23,6 @@ class ProductConfigurationInstanceWriter implements ProductConfigurationInstance
      */
     protected $productConfigurationSessionKeyBuilder;
 
-    /**
-     * @param \Spryker\Client\ProductConfigurationStorage\Dependency\Client\ProductConfigurationStorageToSessionClientInterface $sessionClient
-     * @param \Spryker\Client\ProductConfigurationStorage\Builder\ProductConfigurationSessionKeyBuilderInterface $productConfigurationSessionKeyBuilder
-     */
     public function __construct(
         ProductConfigurationStorageToSessionClientInterface $sessionClient,
         ProductConfigurationSessionKeyBuilderInterface $productConfigurationSessionKeyBuilder
@@ -35,12 +31,6 @@ class ProductConfigurationInstanceWriter implements ProductConfigurationInstance
         $this->productConfigurationSessionKeyBuilder = $productConfigurationSessionKeyBuilder;
     }
 
-    /**
-     * @param string $sku
-     * @param \Generated\Shared\Transfer\ProductConfigurationInstanceTransfer $productConfigurationInstanceTransfer
-     *
-     * @return void
-     */
     public function storeProductConfigurationInstanceBySku(
         string $sku,
         ProductConfigurationInstanceTransfer $productConfigurationInstanceTransfer

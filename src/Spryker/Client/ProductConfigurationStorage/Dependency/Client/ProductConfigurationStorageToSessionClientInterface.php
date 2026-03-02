@@ -25,8 +25,5 @@ interface ProductConfigurationStorageToSessionClientInterface
      */
     public function get(string $name, $default = null);
 
-    /**
-     * @return array
-     */
     public function all(): array;
 }

@@ -38,12 +38,6 @@ class ProductConfigurationInstanceReader implements ProductConfigurationInstance
      */
     protected ProductConfigurationSessionKeyBuilderInterface $productConfigurationSessionKeyBuilder;
 
-    /**
-     * @param \Spryker\Client\ProductConfigurationStorage\Storage\ProductConfigurationStorageReaderInterface $configurationStorageReader
-     * @param \Spryker\Client\ProductConfigurationStorage\Dependency\Client\ProductConfigurationStorageToSessionClientInterface $sessionClient
-     * @param \Spryker\Client\ProductConfigurationStorage\Mapper\ProductConfigurationInstanceMapperInterface $productConfigurationStorageMapper
-     * @param \Spryker\Client\ProductConfigurationStorage\Builder\ProductConfigurationSessionKeyBuilderInterface $productConfigurationSessionKeyBuilder
-     */
     public function __construct(
         ProductConfigurationStorageReaderInterface $configurationStorageReader,
         ProductConfigurationStorageToSessionClientInterface $sessionClient,
@@ -56,11 +50,6 @@ class ProductConfigurationInstanceReader implements ProductConfigurationInstance
         $this->productConfigurationSessionKeyBuilder = $productConfigurationSessionKeyBuilder;
     }
 
-    /**
-     * @param string $sku
-     *
-     * @return \Generated\Shared\Transfer\ProductConfigurationInstanceTransfer|null
-     */
     public function findProductConfigurationInstanceBySku(string $sku): ?ProductConfigurationInstanceTransfer
     {
         $productConfigurationSessionKey = $this->productConfigurationSessionKeyBuilder->getProductConfigurationSessionKey($sku);
@@ -75,11 +64,6 @@ class ProductConfigurationInstanceReader implements ProductConfigurationInstance
         return $this->findProductConfigurationInstanceInStorage($sku);
     }
 
-    /**
-     * @param string $sku
-     *
-     * @return \Generated\Shared\Transfer\ProductConfigurationInstanceTransfer|null
-     */
     protected function findProductConfigurationInstanceInStorage(string $sku): ?ProductConfigurationInstanceTransfer
     {
         $productConfigurationStorageTransfer = $this->configurationStorageReader
@@ -96,11 +80,6 @@ class ProductConfigurationInstanceReader implements ProductConfigurationInstance
             );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductConfigurationInstanceCriteriaTransfer $productConfigurationInstanceCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductConfigurationInstanceCollectionTransfer
-     */
     public function getProductConfigurationInstanceCollection(
         ProductConfigurationInstanceCriteriaTransfer $productConfigurationInstanceCriteriaTransfer
     ): ProductConfigurationInstanceCollectionTransfer {

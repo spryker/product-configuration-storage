@@ -32,9 +32,6 @@ class IsProductHasProductConfigurationInstanceTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testIsProductHasProductConfigurationInstanceTakesInstanceFromSession(): void
     {
         // Arrange
@@ -59,9 +56,6 @@ class IsProductHasProductConfigurationInstanceTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testIsProductHasProductConfigurationInstanceTakesInstanceFromStorage(): void
     {
         // Arrange
@@ -92,9 +86,6 @@ class IsProductHasProductConfigurationInstanceTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testIsProductHasProductConfigurationInstanceWithoutInstance(): void
     {
         // Arrange
@@ -116,9 +107,6 @@ class IsProductHasProductConfigurationInstanceTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testIsProductHasProductConfigurationInstanceTakesFromProductViewTransfer(): void
     {
         // Arrange
@@ -142,9 +130,6 @@ class IsProductHasProductConfigurationInstanceTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testIsProductHasProductConfigurationInstanceForNonConcreteProduct(): void
     {
         // Arrange

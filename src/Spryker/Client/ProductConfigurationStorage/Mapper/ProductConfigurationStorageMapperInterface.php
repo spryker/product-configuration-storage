@@ -11,12 +11,6 @@ use Generated\Shared\Transfer\ProductConfigurationStorageTransfer;
 
 interface ProductConfigurationStorageMapperInterface
 {
-    /**
-     * @param array $productConfigurationStorageData
-     * @param \Generated\Shared\Transfer\ProductConfigurationStorageTransfer $productConfigurationStorageTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductConfigurationStorageTransfer
-     */
     public function mapProductConfigurationStorageDataToProductConfigurationStorageTransfer(
         array $productConfigurationStorageData,
         ProductConfigurationStorageTransfer $productConfigurationStorageTransfer

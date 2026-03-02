@@ -25,9 +25,6 @@ use Spryker\Zed\ProductConfigurationStorage\ProductConfigurationStorageDependenc
  */
 class ProductConfigurationStorageBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\ProductConfigurationStorage\Business\Writer\ProductConfigurationStorageWriterInterface
-     */
     public function createProductConfigurationStorageWriter(): ProductConfigurationStorageWriterInterface
     {
         return new ProductConfigurationStorageWriter(
@@ -38,9 +35,6 @@ class ProductConfigurationStorageBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ProductConfigurationStorage\Business\Deleter\ProductConfigurationStorageDeleterInterface
-     */
     public function createProductConfigurationStorageDeleter(): ProductConfigurationStorageDeleterInterface
     {
         return new ProductConfigurationStorageDeleter(
@@ -49,25 +43,16 @@ class ProductConfigurationStorageBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ProductConfigurationStorage\Business\Mapper\ProductConfigurationStorageMapperInterface
-     */
     public function createProductConfigurationStorageMapper(): ProductConfigurationStorageMapperInterface
     {
         return new ProductConfigurationStorageMapper();
     }
 
-    /**
-     * @return \Spryker\Zed\ProductConfigurationStorage\Dependency\Facade\ProductConfigurationStorageToProductConfigurationFacadeInterface
-     */
     public function getProductConfigurationFacade(): ProductConfigurationStorageToProductConfigurationFacadeInterface
     {
         return $this->getProvidedDependency(ProductConfigurationStorageDependencyProvider::FACADE_PRODUCT_CONFIGURATION);
     }
 
-    /**
-     * @return \Spryker\Zed\ProductConfigurationStorage\Dependency\Facade\ProductConfigurationStorageToEventBehaviorFacadeInterface
-     */
     public function getEventBehaviorFacade(): ProductConfigurationStorageToEventBehaviorFacadeInterface
     {
         return $this->getProvidedDependency(ProductConfigurationStorageDependencyProvider::FACADE_EVENT_BEHAVIOR);

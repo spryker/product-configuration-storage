@@ -32,9 +32,6 @@ class StoreProductConfigurationInstanceBySkuTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testStoreProductConfigurationInstanceBySkuStoresInstanceInSession(): void
     {
         // Arrange
@@ -70,9 +67,6 @@ class StoreProductConfigurationInstanceBySkuTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testStoreProductConfigurationInstanceBySkuStoresEmptyInstanceInSession(): void
     {
         // Arrange

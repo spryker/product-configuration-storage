@@ -31,25 +31,16 @@ class ProductConfigurationStorageBusinessTester extends Actor
 {
     use _generated\ProductConfigurationStorageBusinessTesterActions;
 
-    /**
-     * @return void
-     */
     public function truncateProductConfigurationStorageEntities(): void
     {
         $this->truncateTableRelations($this->getProductConfigurationStorageQuery());
     }
 
-    /**
-     * @return int
-     */
     public function countProductConfigurationStorageEntities(): int
     {
         return $this->getProductConfigurationStorageQuery()->count();
     }
 
-    /**
-     * @return \Orm\Zed\ProductConfigurationStorage\Persistence\SpyProductConfigurationStorageQuery
-     */
     protected function getProductConfigurationStorageQuery(): SpyProductConfigurationStorageQuery
     {
         return SpyProductConfigurationStorageQuery::create();

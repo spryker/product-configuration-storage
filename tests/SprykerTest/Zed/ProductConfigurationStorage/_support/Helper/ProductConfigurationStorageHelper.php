@@ -18,11 +18,6 @@ class ProductConfigurationStorageHelper extends Module
 {
     use DataCleanupHelperTrait;
 
-    /**
-     * @param array $seedData
-     *
-     * @return \Generated\Shared\Transfer\ProductConfigurationStorageTransfer
-     */
     public function haveProductConfigurationStorage(array $seedData = []): ProductConfigurationStorageTransfer
     {
         /** @var \Generated\Shared\Transfer\ProductConfigurationStorageTransfer $productConfigurationStorageTransfer */
@@ -44,11 +39,6 @@ class ProductConfigurationStorageHelper extends Module
         return $productConfigurationStorageTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductConfigurationStorageTransfer $productConfigurationStorageTransfer
-     *
-     * @return void
-     */
     protected function removeProductConfigurationStorage(ProductConfigurationStorageTransfer $productConfigurationStorageTransfer): void
     {
         $this->getProductConfigurationStorageQuery()->filterByIdProductConfigurationStorage(
@@ -56,9 +46,6 @@ class ProductConfigurationStorageHelper extends Module
         )->delete();
     }
 
-    /**
-     * @return \Orm\Zed\ProductConfigurationStorage\Persistence\SpyProductConfigurationStorageQuery
-     */
     protected function getProductConfigurationStorageQuery(): SpyProductConfigurationStorageQuery
     {
         return SpyProductConfigurationStorageQuery::create();

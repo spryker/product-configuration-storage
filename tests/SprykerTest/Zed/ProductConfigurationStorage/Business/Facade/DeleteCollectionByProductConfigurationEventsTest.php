@@ -37,9 +37,6 @@ class DeleteCollectionByProductConfigurationEventsTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -54,9 +51,6 @@ class DeleteCollectionByProductConfigurationEventsTest extends Unit
         $this->tester->truncateProductConfigurationStorageEntities();
     }
 
-    /**
-     * @return void
-     */
     public function testDeleteCollectionByProductConfigurationEventsShouldRemoveProductConfigurationStorage(): void
     {
         // Arrange
@@ -84,9 +78,6 @@ class DeleteCollectionByProductConfigurationEventsTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testDeleteCollectionShouldRemoveProductConfigurationStorageWithoutIds(): void
     {
         // Arrange
@@ -116,9 +107,6 @@ class DeleteCollectionByProductConfigurationEventsTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testDeleteCollectionShouldRemoveProductConfigurationStorageWithFakeId(): void
     {
         // Arrange

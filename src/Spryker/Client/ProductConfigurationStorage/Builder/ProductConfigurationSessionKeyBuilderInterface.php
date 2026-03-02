@@ -9,10 +9,5 @@ namespace Spryker\Client\ProductConfigurationStorage\Builder;
 
 interface ProductConfigurationSessionKeyBuilderInterface
 {
-    /**
-     * @param string $sku
-     *
-     * @return string
-     */
     public function getProductConfigurationSessionKey(string $sku): string;
 }

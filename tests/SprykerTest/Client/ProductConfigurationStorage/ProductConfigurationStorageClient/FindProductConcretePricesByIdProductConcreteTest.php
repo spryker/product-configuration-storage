@@ -34,9 +34,6 @@ class FindProductConcretePricesByIdProductConcreteTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function setUp(): void
     {
         parent::setUp();
@@ -44,9 +41,6 @@ class FindProductConcretePricesByIdProductConcreteTest extends Unit
         $this->tester->setupStorageRedisConfig();
     }
 
-    /**
-     * @return void
-     */
     public function testFindProductConcretePricesByIdProductConcreteWithStoredInstanceInStorage(): void
     {
         // Arrange
@@ -79,9 +73,6 @@ class FindProductConcretePricesByIdProductConcreteTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testFindProductConcretePricesByIdProductConcreteWithEmptyInstancePrices(): void
     {
         // Arrange
@@ -112,9 +103,6 @@ class FindProductConcretePricesByIdProductConcreteTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testFindProductConcretePricesByIdProductConcreteWithoutStoredInstanceInStorage(): void
     {
         // Arrange
@@ -141,9 +129,6 @@ class FindProductConcretePricesByIdProductConcreteTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testFindProductConcretePricesByIdProductConcreteWithoutStoredSkuInProductConcrete(): void
     {
         // Arrange
@@ -167,9 +152,6 @@ class FindProductConcretePricesByIdProductConcreteTest extends Unit
             ->findProductConcretePricesByIdProductConcrete($productConcreteTransfer->getIdProductConcrete());
     }
 
-    /**
-     * @return void
-     */
     public function testFindProductConcretePricesByIdProductConcreteWithoutStoredConcreteProduct(): void
     {
         // Arrange

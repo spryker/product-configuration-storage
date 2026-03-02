@@ -56,9 +56,6 @@ class ProductConfigurationStorageFacadeTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -74,9 +71,6 @@ class ProductConfigurationStorageFacadeTest extends Unit
         $this->productConfigurationStorageEntityManager = new ProductConfigurationStorageEntityManager();
     }
 
-    /**
-     * @return void
-     */
     public function testWriteCollectionByProductConfigurationEventsShouldSaveProductConfigurationStorage(): void
     {
         // Arrange
@@ -114,9 +108,6 @@ class ProductConfigurationStorageFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testDeleteCollectionShouldRemoveProductConfigurationStorageShouldRemoveProductConfigurationStorage(): void
     {
         // Arrange
@@ -152,9 +143,6 @@ class ProductConfigurationStorageFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testGetFilteredProductConfigurationStorageDataTransfersWillReturnSynchronizationDataTransfers(): void
     {
         // Arrange

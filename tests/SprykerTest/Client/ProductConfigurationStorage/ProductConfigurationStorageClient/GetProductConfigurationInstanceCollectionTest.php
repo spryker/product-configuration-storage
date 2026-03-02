@@ -52,9 +52,6 @@ class GetProductConfigurationInstanceCollectionTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testGetProductConfigurationInstanceCollectionFromStorageWhileSkuCriteriaMatched(): void
     {
         // Arrange
@@ -90,9 +87,6 @@ class GetProductConfigurationInstanceCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testGetProductConfigurationInstanceCollectionFromSessionAndStorageReturnsEmptyCollectionWhileNoCriteriaMatched(): void
     {
         // Arrange
@@ -114,9 +108,6 @@ class GetProductConfigurationInstanceCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testGetProductConfigurationInstanceCollectionReturnsEmptyCollectionWhileNoCriteriaSpecified(): void
     {
         // Arrange

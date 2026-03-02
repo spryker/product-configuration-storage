@@ -38,12 +38,6 @@ class ProductConfigurationStorageWriter implements ProductConfigurationStorageWr
      */
     protected $productConfigurationStorageMapper;
 
-    /**
-     * @param \Spryker\Zed\ProductConfigurationStorage\Dependency\Facade\ProductConfigurationStorageToEventBehaviorFacadeInterface $eventBehaviorFacade
-     * @param \Spryker\Zed\ProductConfigurationStorage\Dependency\Facade\ProductConfigurationStorageToProductConfigurationFacadeInterface $configurationFacade
-     * @param \Spryker\Zed\ProductConfigurationStorage\Business\Mapper\ProductConfigurationStorageMapperInterface $productConfigurationStorageMapper
-     * @param \Spryker\Zed\ProductConfigurationStorage\Persistence\ProductConfigurationStorageEntityManagerInterface $productConfigurationStorageEntityManager
-     */
     public function __construct(
         ProductConfigurationStorageToEventBehaviorFacadeInterface $eventBehaviorFacade,
         ProductConfigurationStorageToProductConfigurationFacadeInterface $configurationFacade,

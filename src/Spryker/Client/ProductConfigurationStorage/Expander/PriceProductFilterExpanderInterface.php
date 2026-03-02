@@ -12,12 +12,6 @@ use Generated\Shared\Transfer\ProductViewTransfer;
 
 interface PriceProductFilterExpanderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     * @param \Generated\Shared\Transfer\PriceProductFilterTransfer $priceProductFilterTransfer
-     *
-     * @return \Generated\Shared\Transfer\PriceProductFilterTransfer
-     */
     public function expandPriceProductFilterWithProductConfigurationInstance(
         ProductViewTransfer $productViewTransfer,
         PriceProductFilterTransfer $priceProductFilterTransfer

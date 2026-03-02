@@ -13,20 +13,10 @@ use Generated\Shared\Transfer\ProductConfigurationInstanceTransfer;
 
 interface ProductConfigurationInstanceReaderInterface
 {
-    /**
-     * @param string $sku
-     *
-     * @return \Generated\Shared\Transfer\ProductConfigurationInstanceTransfer|null
-     */
     public function findProductConfigurationInstanceBySku(
         string $sku
     ): ?ProductConfigurationInstanceTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductConfigurationInstanceCriteriaTransfer $productConfigurationInstanceCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductConfigurationInstanceCollectionTransfer
-     */
     public function getProductConfigurationInstanceCollection(
         ProductConfigurationInstanceCriteriaTransfer $productConfigurationInstanceCriteriaTransfer
     ): ProductConfigurationInstanceCollectionTransfer;

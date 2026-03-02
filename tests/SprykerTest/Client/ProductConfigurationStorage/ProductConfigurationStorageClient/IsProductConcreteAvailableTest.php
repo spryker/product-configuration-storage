@@ -28,9 +28,6 @@ class IsProductConcreteAvailableTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testIsProductConcreteAvailableWithAcceptableAvailableQuantity(): void
     {
         // Arrange
@@ -56,9 +53,6 @@ class IsProductConcreteAvailableTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testIsProductConcreteAvailableWithNotAcceptableAvailableQuantity(): void
     {
         // Arrange
@@ -84,9 +78,6 @@ class IsProductConcreteAvailableTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testIsProductConcreteAvailableWithoutAvailableQuantity(): void
     {
         // Arrange
@@ -112,9 +103,6 @@ class IsProductConcreteAvailableTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testIsProductConcreteAvailableWithoutInstanceWithFalseAvailableInProductView(): void
     {
         // Arrange
@@ -138,9 +126,6 @@ class IsProductConcreteAvailableTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testIsProductConcreteAvailableWithoutInstanceWithTrueAvailableInProductView(): void
     {
         // Arrange

@@ -39,9 +39,6 @@ class ExpandProductViewWithProductConfigurationInstanceTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testExpandProductViewWithProductConfigurationInstanceExpandsProductViewWithProductConfigurationInstance(): void
     {
         // Arrange
@@ -75,9 +72,6 @@ class ExpandProductViewWithProductConfigurationInstanceTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testExpandProductViewWithProductConfigurationInstanceExpandsProductViewWithEmptyInstance(): void
     {
         // Arrange
@@ -100,9 +94,6 @@ class ExpandProductViewWithProductConfigurationInstanceTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testExpandProductViewWithProductConfigurationInstanceExpandsProductViewForNonConcreteProduct(): void
     {
         // Arrange
@@ -126,9 +117,6 @@ class ExpandProductViewWithProductConfigurationInstanceTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testExpandProductViewWithProductConfigurationInstanceExpandsProductViewWithInstanceFromStorage(): void
     {
         // Arrange

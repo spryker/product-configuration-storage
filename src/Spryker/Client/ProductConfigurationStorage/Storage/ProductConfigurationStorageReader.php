@@ -31,11 +31,6 @@ class ProductConfigurationStorageReader implements ProductConfigurationStorageRe
      */
     protected $productConfigurationStorageMapper;
 
-    /**
-     * @param \Spryker\Client\ProductConfigurationStorage\Dependency\Service\ProductConfigurationStorageToSynchronizationServiceInterface $synchronizationService
-     * @param \Spryker\Client\ProductConfigurationStorage\Dependency\Client\ProductConfigurationStorageToStorageClientInterface $storageClient
-     * @param \Spryker\Client\ProductConfigurationStorage\Mapper\ProductConfigurationStorageMapperInterface $productConfigurationStorageMapper
-     */
     public function __construct(
         ProductConfigurationStorageToSynchronizationServiceInterface $synchronizationService,
         ProductConfigurationStorageToStorageClientInterface $storageClient,
@@ -46,11 +41,6 @@ class ProductConfigurationStorageReader implements ProductConfigurationStorageRe
         $this->productConfigurationStorageMapper = $productConfigurationStorageMapper;
     }
 
-    /**
-     * @param string $sku
-     *
-     * @return \Generated\Shared\Transfer\ProductConfigurationStorageTransfer|null
-     */
     public function findProductConfigurationStorageBySku(
         string $sku
     ): ?ProductConfigurationStorageTransfer {
@@ -98,11 +88,6 @@ class ProductConfigurationStorageReader implements ProductConfigurationStorageRe
         return $storageKeys;
     }
 
-    /**
-     * @param string $reference
-     *
-     * @return string
-     */
     protected function generateKey(string $reference): string
     {
         $synchronizationDataTransfer = (new SynchronizationDataTransfer())

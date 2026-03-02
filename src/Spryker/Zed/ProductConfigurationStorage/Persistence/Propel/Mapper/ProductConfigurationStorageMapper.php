@@ -12,12 +12,6 @@ use Orm\Zed\ProductConfigurationStorage\Persistence\SpyProductConfigurationStora
 
 class ProductConfigurationStorageMapper
 {
-    /**
-     * @param \Orm\Zed\ProductConfigurationStorage\Persistence\SpyProductConfigurationStorage $productConfigurationStorageEntity
-     * @param \Generated\Shared\Transfer\ProductConfigurationStorageTransfer $productConfigurationStorageTransfer
-     *
-     * @return \Orm\Zed\ProductConfigurationStorage\Persistence\SpyProductConfigurationStorage
-     */
     public function mapProductConfigurationStorageTransferToProductConfigurationStorageEntity(
         SpyProductConfigurationStorage $productConfigurationStorageEntity,
         ProductConfigurationStorageTransfer $productConfigurationStorageTransfer
@@ -28,12 +22,6 @@ class ProductConfigurationStorageMapper
         return $productConfigurationStorageEntity;
     }
 
-    /**
-     * @param \Orm\Zed\ProductConfigurationStorage\Persistence\SpyProductConfigurationStorage $productConfigurationStorageEntity
-     * @param \Generated\Shared\Transfer\ProductConfigurationStorageTransfer $productConfigurationStorageTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductConfigurationStorageTransfer
-     */
     public function mapProductConfigurationStorageEntityToProductConfigurationStorageTransfer(
         SpyProductConfigurationStorage $productConfigurationStorageEntity,
         ProductConfigurationStorageTransfer $productConfigurationStorageTransfer

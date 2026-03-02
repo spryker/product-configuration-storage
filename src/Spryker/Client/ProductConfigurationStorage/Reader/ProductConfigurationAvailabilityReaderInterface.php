@@ -11,17 +11,7 @@ use Generated\Shared\Transfer\ProductViewTransfer;
 
 interface ProductConfigurationAvailabilityReaderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     *
-     * @return bool
-     */
     public function isProductHasProductConfigurationInstance(ProductViewTransfer $productViewTransfer): bool;
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     *
-     * @return bool
-     */
     public function isProductConcreteAvailable(ProductViewTransfer $productViewTransfer): bool;
 }

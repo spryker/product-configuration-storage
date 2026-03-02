@@ -28,11 +28,6 @@ class ProductConfigurationPriceReader implements ProductConfigurationPriceReader
      */
     protected $productConfigurationInstanceReader;
 
-    /**
-     * @param \Spryker\Client\ProductConfigurationStorage\Dependency\Client\ProductConfigurationStorageToLocaleClientInterface $localeClient
-     * @param \Spryker\Client\ProductConfigurationStorage\Dependency\Client\ProductConfigurationStorageToProductStorageClientInterface $productStorageClient
-     * @param \Spryker\Client\ProductConfigurationStorage\Reader\ProductConfigurationInstanceReaderInterface $productConfigurationInstanceReader
-     */
     public function __construct(
         ProductConfigurationStorageToLocaleClientInterface $localeClient,
         ProductConfigurationStorageToProductStorageClientInterface $productStorageClient,
@@ -71,11 +66,6 @@ class ProductConfigurationPriceReader implements ProductConfigurationPriceReader
         return $productConfigurationInstance->getPrices()->getArrayCopy();
     }
 
-    /**
-     * @param array $productConcreteStorageData
-     *
-     * @return \Generated\Shared\Transfer\ProductConcreteTransfer
-     */
     protected function mapProductStorageDataToProductConcreteTransfer(array $productConcreteStorageData): ProductConcreteTransfer
     {
         return (new ProductConcreteTransfer())->fromArray($productConcreteStorageData, true);

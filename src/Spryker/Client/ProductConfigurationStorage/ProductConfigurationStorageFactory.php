@@ -39,9 +39,6 @@ use Spryker\Client\ProductConfigurationStorage\Writer\ProductConfigurationInstan
  */
 class ProductConfigurationStorageFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\ProductConfigurationStorage\Expander\ProductViewExpanderInterface
-     */
     public function createProductViewExpander(): ProductViewExpanderInterface
     {
         return new ProductViewExpander(
@@ -49,17 +46,11 @@ class ProductConfigurationStorageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\ProductConfigurationStorage\Mapper\ProductConfigurationInstanceMapperInterface
-     */
     public function createProductConfigurationInstanceMapper(): ProductConfigurationInstanceMapperInterface
     {
         return new ProductConfigurationInstanceMapper();
     }
 
-    /**
-     * @return \Spryker\Client\ProductConfigurationStorage\Reader\ProductConfigurationInstanceReaderInterface
-     */
     public function createProductConfigurationInstanceReader(): ProductConfigurationInstanceReaderInterface
     {
         return new ProductConfigurationInstanceReader(
@@ -70,9 +61,6 @@ class ProductConfigurationStorageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\ProductConfigurationStorage\Writer\ProductConfigurationInstanceWriterInterface
-     */
     public function createProductConfigurationInstanceWriter(): ProductConfigurationInstanceWriterInterface
     {
         return new ProductConfigurationInstanceWriter(
@@ -81,9 +69,6 @@ class ProductConfigurationStorageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\ProductConfigurationStorage\Storage\ProductConfigurationStorageReaderInterface
-     */
     public function createProductConfigurationStorageReader(): ProductConfigurationStorageReaderInterface
     {
         return new ProductConfigurationStorageReader(
@@ -93,25 +78,16 @@ class ProductConfigurationStorageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\ProductConfigurationStorage\Mapper\ProductConfigurationStorageMapperInterface
-     */
     public function createProductConfigurationStorageMapper(): ProductConfigurationStorageMapperInterface
     {
         return new ProductConfigurationStorageMapper();
     }
 
-    /**
-     * @return \Spryker\Client\ProductConfigurationStorage\Expander\PriceProductFilterExpanderInterface
-     */
     public function createPriceProductFilterExpander(): PriceProductFilterExpanderInterface
     {
         return new PriceProductFilterExpander();
     }
 
-    /**
-     * @return \Spryker\Client\ProductConfigurationStorage\Reader\ProductConfigurationAvailabilityReaderInterface
-     */
     public function createProductConfigurationAvailabilityReader(): ProductConfigurationAvailabilityReaderInterface
     {
         return new ProductConfigurationAvailabilityReader(
@@ -119,9 +95,6 @@ class ProductConfigurationStorageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\ProductConfigurationStorage\Reader\ProductConfigurationPriceReaderInterface
-     */
     public function createProductConfigurationPriceReader(): ProductConfigurationPriceReaderInterface
     {
         return new ProductConfigurationPriceReader(
@@ -131,49 +104,31 @@ class ProductConfigurationStorageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\ProductConfigurationStorage\Builder\ProductConfigurationSessionKeyBuilderInterface
-     */
     public function createProductConfigurationSessionKeyBuilder(): ProductConfigurationSessionKeyBuilderInterface
     {
         return new ProductConfigurationSessionKeyBuilder();
     }
 
-    /**
-     * @return \Spryker\Client\ProductConfigurationStorage\Dependency\Client\ProductConfigurationStorageToSessionClientInterface
-     */
     public function getSessionClient(): ProductConfigurationStorageToSessionClientInterface
     {
         return $this->getProvidedDependency(ProductConfigurationStorageDependencyProvider::CLIENT_SESSION);
     }
 
-    /**
-     * @return \Spryker\Client\ProductConfigurationStorage\Dependency\Service\ProductConfigurationStorageToSynchronizationServiceInterface
-     */
     public function getSynchronizationService(): ProductConfigurationStorageToSynchronizationServiceInterface
     {
         return $this->getProvidedDependency(ProductConfigurationStorageDependencyProvider::SERVICE_SYNCHRONIZATION);
     }
 
-    /**
-     * @return \Spryker\Client\ProductConfigurationStorage\Dependency\Client\ProductConfigurationStorageToStorageClientInterface
-     */
     public function getStorageClient(): ProductConfigurationStorageToStorageClientInterface
     {
         return $this->getProvidedDependency(ProductConfigurationStorageDependencyProvider::CLIENT_STORAGE);
     }
 
-    /**
-     * @return \Spryker\Client\ProductConfigurationStorage\Dependency\Client\ProductConfigurationStorageToProductStorageClientInterface
-     */
     public function getProductStorageClient(): ProductConfigurationStorageToProductStorageClientInterface
     {
         return $this->getProvidedDependency(ProductConfigurationStorageDependencyProvider::CLIENT_PRODUCT_STORAGE);
     }
 
-    /**
-     * @return \Spryker\Client\ProductConfigurationStorage\Dependency\Client\ProductConfigurationStorageToLocaleClientInterface
-     */
     public function getLocaleClient(): ProductConfigurationStorageToLocaleClientInterface
     {
         return $this->getProvidedDependency(ProductConfigurationStorageDependencyProvider::CLIENT_LOCALE);

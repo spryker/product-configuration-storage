@@ -12,12 +12,6 @@ use Generated\Shared\Transfer\ProductConfigurationTransfer;
 
 class ProductConfigurationStorageMapper implements ProductConfigurationStorageMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ProductConfigurationTransfer $productConfiguration
-     * @param \Generated\Shared\Transfer\ProductConfigurationStorageTransfer $productConfigurationStorageTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductConfigurationStorageTransfer
-     */
     public function mapProductConfigurationTransferToProductConfigurationStorageTransfer(
         ProductConfigurationTransfer $productConfiguration,
         ProductConfigurationStorageTransfer $productConfigurationStorageTransfer

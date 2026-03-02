@@ -31,9 +31,6 @@ class ExpandPriceProductFilterWithProductConfigurationInstanceTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testExpandPriceProductFilterWithProductConfigurationInstance(): void
     {
         // Arrange
@@ -60,9 +57,6 @@ class ExpandPriceProductFilterWithProductConfigurationInstanceTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testExpandPriceProductFilterWithProductConfigurationInstanceWithoutInstance(): void
     {
         // Arrange

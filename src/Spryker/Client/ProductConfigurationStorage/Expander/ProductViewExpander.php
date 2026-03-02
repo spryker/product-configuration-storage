@@ -18,9 +18,6 @@ class ProductViewExpander implements ProductViewExpanderInterface
      */
     protected $productConfigurationInstanceReader;
 
-    /**
-     * @param \Spryker\Client\ProductConfigurationStorage\Reader\ProductConfigurationInstanceReaderInterface $productConfigurationInstanceReader
-     */
     public function __construct(
         ProductConfigurationInstanceReaderInterface $productConfigurationInstanceReader
     ) {
@@ -57,11 +54,6 @@ class ProductViewExpander implements ProductViewExpanderInterface
         return $productViewTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     *
-     * @return bool
-     */
     protected function isProductConcrete(ProductViewTransfer $productViewTransfer): bool
     {
         return $productViewTransfer->getIdProductConcrete() !== null;

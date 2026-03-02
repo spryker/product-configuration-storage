@@ -19,9 +19,6 @@ use Spryker\Zed\ProductConfigurationStorage\ProductConfigurationStorageDependenc
  */
 class ProductConfigurationStorageCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\ProductConfigurationStorage\Dependency\Facade\ProductConfigurationStorageToProductConfigurationFacadeInterface
-     */
     public function getProductConfigurationFacade(): ProductConfigurationStorageToProductConfigurationFacadeInterface
     {
         return $this->getProvidedDependency(ProductConfigurationStorageDependencyProvider::FACADE_PRODUCT_CONFIGURATION);
