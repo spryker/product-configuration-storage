@@ -7,6 +7,7 @@
 
 namespace SprykerTest\Client\ProductConfigurationStorage\ProductConfigurationStorageClient;
 
+use ArrayObject;
 use Codeception\Test\Unit;
 use Generated\Shared\DataBuilder\ProductConfigurationInstanceBuilder;
 use Generated\Shared\Transfer\PriceProductFilterTransfer;
@@ -26,18 +27,21 @@ use Generated\Shared\Transfer\ProductViewTransfer;
  */
 class ExpandPriceProductFilterWithProductConfigurationInstanceTest extends Unit
 {
+    protected const string PRODUCT_SKU = 'configurable-product-sku';
+
     /**
      * @var \SprykerTest\Client\ProductConfigurationStorage\ProductConfigurationStorageClientTester
      */
     protected $tester;
 
-    public function testExpandPriceProductFilterWithProductConfigurationInstance(): void
+    public function testGivenProductViewWithConfigurationInstanceWithPricesWhenExpandedThenFilterGetsSkuAndInstance(): void
     {
         // Arrange
         $productConfigurationInstanceTransfer = (new ProductConfigurationInstanceBuilder([
             ProductConfigurationInstanceTransfer::PRICES => new PriceProductTransfer(),
         ]))->build();
         $productViewTransfer = (new ProductViewTransfer())
+            ->setSku(static::PRODUCT_SKU)
             ->setProductConfigurationInstance($productConfigurationInstanceTransfer);
 
         // Act
@@ -46,9 +50,10 @@ class ExpandPriceProductFilterWithProductConfigurationInstanceTest extends Unit
             ->expandPriceProductFilterWithProductConfigurationInstance($productViewTransfer, new PriceProductFilterTransfer());
 
         // Assert
-        $this->assertNotNull(
-            $priceProductFilterTransfer->getProductConfigurationInstance(),
-            'Expects that filter will be expanded with product configuration.',
+        $this->assertSame(
+            static::PRODUCT_SKU,
+            $priceProductFilterTransfer->getSku(),
+            'Expects that filter SKU is set to the product view SKU so configuration prices are matched.',
         );
         $this->assertEquals(
             $productConfigurationInstanceTransfer,
@@ -57,7 +62,7 @@ class ExpandPriceProductFilterWithProductConfigurationInstanceTest extends Unit
         );
     }
 
-    public function testExpandPriceProductFilterWithProductConfigurationInstanceWithoutInstance(): void
+    public function testGivenProductViewWithoutConfigurationInstanceWhenExpandedThenFilterIsUnchanged(): void
     {
         // Arrange
 
@@ -68,8 +73,37 @@ class ExpandPriceProductFilterWithProductConfigurationInstanceTest extends Unit
 
         // Assert
         $this->assertNull(
+            $priceProductFilterTransfer->getSku(),
+            'Expects that filter SKU is not set when there is no product configuration instance.',
+        );
+        $this->assertNull(
             $priceProductFilterTransfer->getProductConfigurationInstance(),
             'Expects that filter will not be expanded with product configuration when no product configuration.',
+        );
+    }
+
+    public function testGivenProductViewWithConfigurationInstanceWithoutPricesWhenExpandedThenFilterIsUnchanged(): void
+    {
+        // Arrange
+        $productConfigurationInstanceTransfer = (new ProductConfigurationInstanceBuilder())->build();
+        $productConfigurationInstanceTransfer->setPrices(new ArrayObject());
+        $productViewTransfer = (new ProductViewTransfer())
+            ->setSku(static::PRODUCT_SKU)
+            ->setProductConfigurationInstance($productConfigurationInstanceTransfer);
+
+        // Act
+        $priceProductFilterTransfer = $this->tester
+            ->getClient()
+            ->expandPriceProductFilterWithProductConfigurationInstance($productViewTransfer, new PriceProductFilterTransfer());
+
+        // Assert
+        $this->assertNull(
+            $priceProductFilterTransfer->getSku(),
+            'Expects that filter SKU is not set when the configuration instance has no prices.',
+        );
+        $this->assertNull(
+            $priceProductFilterTransfer->getProductConfigurationInstance(),
+            'Expects that filter will not be expanded when the configuration instance has no prices.',
         );
     }
 }
