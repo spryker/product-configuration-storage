@@ -12,6 +12,8 @@ use Spryker\Client\Kernel\AbstractBundleConfig;
 class ProductConfigurationStorageConfig extends AbstractBundleConfig
 {
     /**
+     * @api
+     *
      * Product configuration session key
      *
      * @var string
